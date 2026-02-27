@@ -1,0 +1,134 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Shopping Cart Counter</title>
+
+<style>
+/* Background Image */
+body{
+    margin: 0;
+    height: 100vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-family: Arial, sans-serif;
+
+    background-image: url("https://th.bing.com/th/id/OIP.LUkmRSaGt6_2Vgm1QRbC9QHaKX?w=129&h=181&c=7&r=0&o=7&dpr=1.3&pid=1.7&rm=3");
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+}
+
+/* Glass Card */
+.container{
+    background: rgb(47, 3, 45);
+    backdrop-filter: blur(12px);
+    padding: 30px;
+    width: 340px;
+    border-radius: 18px;
+    text-align: center;
+    color: white;
+
+    border: 1px solid rgba(255,255,255,0.15);
+    box-shadow: 0 10px 40px rgba(0,0,0,0.6);
+}
+
+/* Cart Counter */
+.cart-box{
+    background: rgba(255,255,255,0.15);
+    padding: 10px;
+    border-radius: 10px;
+    margin-bottom: 15px;
+    font-size: 18px;
+    font-weight: bold;
+}
+
+/* Product Box */
+.product{
+    background: rgba(255,255,255,0.1);
+    padding: 10px;
+    margin: 10px 0;
+    border-radius: 8px;
+}
+
+/* Buttons */
+.add-btn{
+    padding: 6px 12px;
+    border: none;
+    border-radius: 6px;
+    background: linear-gradient(135deg, #00c6ff, #0072ff);
+    color: white;
+    cursor: pointer;
+    margin: 4px;
+}
+
+.remove-btn{
+    padding: 6px 12px;
+    border: none;
+    border-radius: 6px;
+    background: linear-gradient(135deg, #ff4d4d, #ff0000);
+    color: white;
+    cursor: pointer;
+    margin: 4px;
+}
+
+button:hover{
+    transform: scale(1.05);
+}
+</style>
+</head>
+
+<body>
+
+<div class="container">
+    <h2>Shopping Cart</h2>
+
+    <div class="cart-box">
+        Cart Items: <span id="cartCount">0</span>
+    </div>
+
+    <div class="product">
+        Shoes<br>
+        <button class="add-btn" onclick="addCart()">Add</button>
+        <button class="remove-btn" onclick="removeCart()">Remove</button>
+    </div>
+
+    <div class="product">
+        Bag<br>
+        <button class="add-btn" onclick="addCart()">Add</button>
+        <button class="remove-btn" onclick="removeCart()">Remove</button>
+    </div>
+
+    <div class="product">
+        Watch<br>
+        <button class="add-btn" onclick="addCart()">Add</button>
+        <button class="remove-btn" onclick="removeCart()">Remove</button>
+    </div>
+
+    <div class="product">
+        Headphones<br>
+        <button class="add-btn" onclick="addCart()">Add</button>
+        <button class="remove-btn" onclick="removeCart()">Remove</button>
+    </div>
+</div>
+
+<script>
+let count = 0;
+
+function addCart(){
+    count++;
+    document.getElementById("cartCount").innerText = count;
+}
+
+function removeCart(){
+    if(count > 0){
+        count--;
+        document.getElementById("cartCount").innerText = count;
+    }
+}
+</script>
+
+</body>
+</html>
